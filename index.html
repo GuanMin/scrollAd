@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 288px;
+            background: #B2B2B2;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            display: none;
+        }
+
+        .box .close-btn {
+            float: right;
+            color: pink;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .box img {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<div>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+<p>sadsadsadasd</p>
+</div>
+<div class="box">
+    <a class="close-btn J-close-btn" href="#none">关闭</a>
+    <img class="img" src="https://img.alicdn.com/tps/i4/TB1miZyQVXXXXX6XFXXSutbFXXX.jpg" alt="">
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script>
+    $(function () {
+
+        function Scroll(opts) {
+            this.init(opts)
+        }
+
+        Scroll.prototype = {
+            init: function (opts) {
+                var _this = this;
+                _this.$target = opts.$target;
+                _this.$btn = _this.$target.find('.J-close-btn');
+
+                _this.addEvents();
+                _this.scroll();
+            },
+            addEvents:function () {
+                var _this = this;
+                _this.$btn.click(function () {
+                    _this.isClose = true;
+                    _this.$target.slideUp();
+                })
+            },
+            //滚轮到1000px显示广告
+            scroll:function () {
+                var _this = this;
+                $(window).scroll(function () {
+                    if(!_this.isClose) {
+                        if($(window).scrollTop() > 1000){
+                            _this.$target.slideDown();
+                        }
+                        else {
+                            _this.$target.slideUp();
+                        }
+                    }
+                })
+            }
+
+
+        };
+
+        var scroll = new Scroll({
+            $target: $('.box')
+        });
+
+    })
+</script>
+</body>
+</html>
+
